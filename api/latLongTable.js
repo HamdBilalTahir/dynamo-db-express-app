@@ -1,9 +1,16 @@
+// require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const AWS = require("aws-sdk");
-AWS.config.update({
-  region: "use-east-2",
-});
+const AWSConfig = {
+  // accessKeyId: process.env.AWS_ACCESS_KEY,
+  // secretAccessKey: process.env.AWS_SECRET_KEY,
+  // region: process.env.AWS_REGION,
+  accessKeyId: "AKIAUCT7HWON572VOW73",
+  secretAccessKey: "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",
+  region: "us-east-2",
+};
+AWS.config.update(AWSConfig);
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 const dynamodbTableName = "LatLongTable";
 

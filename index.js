@@ -2,18 +2,18 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
-const latLongTableRouter = require("./routes/latLongTable");
+const latLongTableRouter = require("./api/latLongTable");
 
 app.use(express.json());
-app.use("/latLongTable", latLongTableRouter);
+app.use("/api/latLongTable", latLongTableRouter);
 
-app.get("/", (req, res) => {
+app.get("/api/", (req, res) => {
   res.send(
     "<h1>Node.js CRUD API</h1> <h4>Message: Success</h4><p>Version:1.0</p>"
   );
 });
 
-app.get("/health", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.send();
 });
 

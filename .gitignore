@@ -1,0 +1,4 @@
+# Put files here to ignore
+
+# node modules
+node_modules/
